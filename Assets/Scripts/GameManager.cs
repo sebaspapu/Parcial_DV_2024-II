@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         playerMovement.enabled = false; // Detén el movimiento del jugador
         endCanvas.SetActive(true);      // Activa el Canvas final
-        endScoreText.text = "Monedas recogidas: " + score; // Muestra el puntaje final
+        endScoreText.text = "PowerUps Recolectados: " + score; // Muestra el puntaje final
     }
 
     void Start()
