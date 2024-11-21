@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    public int score;
+    int score;
     public static GameManager inst;
     public Text scoreText;
     public PlayerMovement playerMovement;
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         score++;
         scoreText.text = "SCORE: " + score;
         // Increase the player's speed
-        //playerMovement.speed += playerMovement.speedIncreasePerPoint;
+        playerMovement.speed += playerMovement.speedIncreasePerPoint;
     }
 
     private void Awake()

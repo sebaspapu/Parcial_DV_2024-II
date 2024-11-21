@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalInput;
     public float horizontalMultiplier = 2;
 
+    public float speedIncreasePerPoint = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
