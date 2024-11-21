@@ -8,7 +8,7 @@ public class MenuControl : MonoBehaviour
 
     public void ReturnGame()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync(1);
     }
 
     // Start is called before the first frame update

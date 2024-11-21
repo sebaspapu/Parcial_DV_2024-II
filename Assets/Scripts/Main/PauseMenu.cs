@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(0);
         PausePanel.SetActive(false);
         Time.timeScale = 1;
     }
