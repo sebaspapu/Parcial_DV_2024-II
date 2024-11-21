@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -19,5 +20,11 @@ public class CameraFollow : MonoBehaviour
         targetPos.x = 0;
         transform.position = targetPos;
 
+    }
+
+    // ir scena ayuda de controles
+    public void HelpGame()
+    {
+        SceneManager.LoadSceneAsync(2);
     }
 }
