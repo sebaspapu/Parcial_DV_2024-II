@@ -56,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
     public void Die()
     {
         alive = false;
-        // restaurar el juego con restraso de 2s
-        Invoke("Restart", 1);
+        // Llama a EndGame del GameManager
+        GameManager.inst.EndGame();
     }
 
     void Restart()
