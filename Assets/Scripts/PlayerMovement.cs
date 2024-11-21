@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float speedIncreasePerPoint = 0.1f;
 
+    [SerializeField] float jumpForce = 600f;
+    [SerializeField] LayerMask groundMask;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //llamar la funcion de salto
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
         horizontalInput = Input.GetAxis("Horizontal");
 
         // para cuando se cae
@@ -53,6 +63,20 @@ public class PlayerMovement : MonoBehaviour
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Jump()
+    {
+        float height = GetComponent<Collider>().bounds.size.y;
+
+        // Verificar si está tocando el suelo
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+
+        if (isGrounded)
+        {
+            // Si está tocando el suelo, permite el salto
+            rb.AddForce(Vector3.up * jumpForce);
+        }
     }
 
 }
